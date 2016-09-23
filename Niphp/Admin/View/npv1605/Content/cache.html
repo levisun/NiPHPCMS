@@ -1,0 +1,26 @@
+<include file='Common/header' />
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>{:L('compile_type')}</th>
+			<th>{:L('compile_size')}</th>
+			<th>{:L('compile_file_num')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name='list' id='vo'>
+		<tr>
+			<td>{$vo.name}</td>
+			<td>{$vo.size}</td>
+			<td>{$vo.count}</td>
+			<td>
+				<a href="{:U('', array('d' => 'remove', 'id' => $vo['name']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+
+<include file='Common/footer' />

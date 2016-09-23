@@ -1,0 +1,34 @@
+<include file="Common/head" />
+<form action="" method="post">
+	<ul class="login">
+		<li>
+			<h5>{:L('manage_login')}</h5>
+		</li>
+		<li class="input-group">
+			<span class="input-group-addon"><i class="icon-user"></i></span>
+			<input type="text" name="username" class="form-control" placeholder="{:L('username')}">
+		</li>
+		<li class="input-group">
+			<span class="input-group-addon"><i class="icon-lock"></i></span>
+			<input type="password" name="password" class="form-control" placeholder="{:L('password')}">
+		</li>
+		<li>
+			<input type="text" name="verify" class="form-control" placeholder="{:L('verify')}">
+			<img src="{:U('verify')}" data-url="{:U('verify')}" class="np-verify">
+		</li>
+		<li>
+			<input type="submit" id="account-login" class="btn btn-block btn-primary" data-loading-text="{:L('logining')}" value="{:L('_button_login')}">
+		</li>
+	</ul>
+</form>
+
+
+<script>
+  $('#account-login').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
+
+<include file="Common/foot" />

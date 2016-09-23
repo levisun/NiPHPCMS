@@ -1,0 +1,38 @@
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="title" class="col-md-2 control-label">{:L('content_title')}</label>
+			<div class="col-md-6">
+				{$data.title}
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="logo" class="col-md-2 control-label">{:L('content_logo')}</label>
+			<div class="col-md-6">
+				<img src="{$data.logo}" id="img-linklogo" width="100" <neq name="data.logo" value=""> style="display:none"</neq>>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="url" class="col-md-2 control-label">{:L('content_url')}</label>
+			<div class="col-md-6">
+				{$data.url}
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="type_id" class="col-md-2 control-label">{:l('content_type')}</label>
+			<div class="col-md-6">
+				<select name="type_id" id="type_id" class="form-control">
+					<option value="0">{:L('select_type')}</option>
+					<volist name="type" id="vo">
+					<option value="{$vo.id}" <eq name="data.type_id" value="$vo.id">selected="selected"</eq>>{$vo.name}</option>
+					</volist>
+				</select>
+			</div>
+		</li>
+	</ul>
+	<input type="hidden" name="category_id" value="{$data.category_id}">
+	<input type="hidden" name="id" value="{$data.id}">
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_reduction')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>

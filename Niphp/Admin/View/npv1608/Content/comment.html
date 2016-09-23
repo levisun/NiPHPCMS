@@ -1,0 +1,48 @@
+<menu>
+	<a href="{:U('', array('pass' => 'pass'))}" class="btn btn-default"><span class="icon-eye-close"></span>{:L('_button_unexamined')}</a>
+	<a href="{:U('', array('report' => 'report'))}" class="btn btn-default"><span class="icon-warning-sign"></span>{:L('_button_report')}</a>
+	<a href="{:U()}" class="btn btn-default"><span class="icon-eye-open"></span>{:L('_button_all')}</a>
+</menu>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>{:L('id')}</th>
+			<th>{:L('username')}</th>
+			<th>{:L('content')}</th>
+			<th>{:L('_button_unexamined')}</th>
+			<th>{:L('_button_report')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name='list' id='vo'>
+		<tr>
+			<td>{$vo.id}</td>
+			<td>{$vo.username}</td>
+			<td title="{$vo.content}">{$vo.content|msubstr=0,10}</td>
+			<td>
+				<if condition='$vo.is_pass eq 1'>
+				{:L('_button_yes')}
+				<else />
+				{:L('_button_no')}
+				</if>
+			</td>
+			<td>
+				<if condition='$vo.is_report eq 1'>
+				<b style="color:red;">{:L('_button_yes')}</b>
+				<else />
+				{:L('_button_no')}
+				</if>
+			</td>
+			<td>
+				<a href="{:U('', array('d' => 'editor', 'id' => $vo['id']))}"><i class="icon-edit"></i>{:L('_button_check')}</a>
+				<a href="{:U('', array('d' => 'remove', 'id' => $vo['id']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+<div class="paging">
+	{$page}
+</div>

@@ -1,0 +1,27 @@
+<menu>
+	<a href="{:U('')}" class="btn btn-default"><span class="icon-eye-open"></span>{:L('visit')}</a>
+
+	<a href="{:U('', array('d' => 'searchengine'))}" class="btn btn-default"><span class="icon-eye-open"></span>{:L('searchengine')}</a>
+</menu>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>{:L('date')}</th>
+			<th>{:L('searchengine_name')}</th>
+			<th>{:L('count')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name='list' id='vo'>
+		<tr>
+			<td>{$vo.date|date='Y-m-d',###}</td>
+			<td>{$vo.name}</td>
+			<td>{$vo.count}</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+<div class="paging">
+	{$page}
+</div>

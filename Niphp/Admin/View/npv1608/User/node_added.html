@@ -1,0 +1,54 @@
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="title" class="col-md-2 control-label">{:L('nodetitle')}</label>
+			<div class="col-md-6">
+				<input type="text" name="title" id="title" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="name" class="col-md-2 control-label">{:L('nodename')}</label>
+			<div class="col-md-6">
+				<input type="text" name="name" id="name" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="pid" class="col-md-2 control-label">{:L('parent')}</label>
+			<div class="col-md-6">
+				<select name="pid" id="pid" class="form-control">
+					<option value="0">{:L('select_parent')}</option>
+					<volist name='node' id='vo'>
+					<option value="{$vo.id}">{$vo.title}</option>
+					</volist>
+				</select>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="level" class="col-md-2 control-label">{:L('level')}</label>
+			<div class="col-md-6">
+				<select name="level" id="level" class="form-control">
+					<option value="">{:L('select_level')}</option>
+					<option value="1">{:L('module')}</option>
+					<option value="2">{:L('controller')}</option>
+					<option value="3">{:L('model')}</option>
+				</select>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="remark" class="col-md-2 control-label">{:L('remark')}</label>
+			<div class="col-md-6">
+				<textarea name="remark" id="remark" class="form-control"></textarea>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="status" class="col-md-2 control-label">{:L('status')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="status" value="1" checked>{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="status" value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>

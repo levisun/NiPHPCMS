@@ -1,0 +1,60 @@
+<header id="np-content-title">
+	<h3 class="align-c"><a href="{$article.url}">{$article.title}</a></h3>
+	<div class="align-c">
+		<time><i class="icon-time"></i>{$article.updatetime|date='Y-m-d',###}</time>
+		<span>分类:<a href="{$article.cat_url}">{$article.cat_name}</a></span>
+		<span><i class="icon-eye-open"></i>阅读({$article.hits})</span>
+		<span><i class="icon-comments-alt"></i>评论(<a href="{$article.comment_url}">{$article.comment}</a>)</span>
+	</div>
+</header>
+<ul class="np-list">
+	<volist name="list" id="vo">
+	<li class="media">
+		<div class="media-body">
+			<p>{$vo.content}</p>
+			<div class="media-sub-heading">
+				<span><i class="icon-time"></i>{$vo.addtime|date='Y-m-d',###}</span>
+				<span>{$vo.ip}[{$vo.ipattr}]</span>
+				<span onclick="support({$vo.id})">
+					<i class="icon-thumbs-up"></i>
+					赞({$vo.support})
+				</span>
+				<span onclick="report({$vo.id})">
+					<i class="icon-warning-sign"></i>
+					举报
+				</span>
+			</div>
+		</div>
+	</li>
+	</volist>
+</ul>
+<div class="paging">
+	{$page}
+</div>
+<script>
+function support(id) {
+	jQuery.ajax({
+		type: "get",
+		async: false,
+		url: "{:U('support')}",
+		data: {id: id},
+		success: function(data){
+			// jQuery().remove();
+			// jQuery().append(data);
+		}
+	});
+}
+
+function report(id) {
+	jQuery.ajax({
+		type: "get",
+		async: false,
+		url: "{:U('report')}",
+		data: {id: id},
+		success: function(data){
+			// jQuery().remove();
+			// jQuery().append(data);
+		}
+	});
+}
+</script>

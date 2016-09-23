@@ -1,0 +1,36 @@
+<include file='Common/header' />
+
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="name" class="col-md-2 control-label">{:L('levelname')}</label>
+			<div class="col-md-6">
+				<input type="text" name="name" id="name" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="integral" class="col-md-2 control-label">{:L('levelintegral')}</label>
+			<div class="col-md-6">
+				<input type="text" name="integral" id="integral" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="status" class="col-md-2 control-label">{:L('levelintegral')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="status" value="1" checked>{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="status" value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="remark" class="col-md-2 control-label">{:L('remark')}</label>
+			<div class="col-md-6">
+				<textarea name="remark" id="remark" class="form-control"></textarea>
+			</div>
+		</li>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>
+
+<include file='Common/footer' />

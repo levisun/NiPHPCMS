@@ -1,0 +1,217 @@
+body {
+	background-color: #f2f2f2;
+}
+#np-header {
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+}
+#np-header .np-top-nav {
+	margin-bottom: 10px;
+}
+#np-header .np-top-nav .np-top-member {
+	line-height: 38px;
+}
+#np-header .np-header #np-logo h1 {
+	margin: 0;
+}
+#np-header .np-header #np-nav {
+	font-size: 18px;
+}
+
+#np-main #np-banner {
+	background-color: #fff;
+	height: 200px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+#np-main #np-banner img {
+	width: 100%;
+	height: 200px;
+}
+#np-main #np-breadcrumb {
+	margin-bottom: 15px;
+}
+#np-main #np-breadcrumb .col-md-12,
+#np-main #np-content .col-md-12 {
+	padding: 0;
+}
+
+#np-main #np-breadcrumb .breadcrumb {
+	border: 1px solid #ccc;
+	padding: 10px 15px;
+	background-color: #fbfbfb;
+	margin-bottom: 0;
+}
+
+#np-main #np-content header {
+	padding: 10px 0 15px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 15px;
+}
+#np-main #np-content header h3 {
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+#np-main #np-sidebar {
+	/*padding-right: 0;*/
+}
+
+#np-main #np-sidebar #np-menu, #np-main #np-sidebar .np-hot-box {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	overflow: hidden;
+}
+#np-main #np-sidebar header h4 {
+	margin: 0;
+	line-height: 40px;
+	padding: 0 15px;
+	background-color: #fbfbfb;
+	border-bottom: 1px solid #ccc;
+}
+#np-main #np-sidebar #np-menu ul li {
+	border: none;
+}
+#np-main #np-sidebar #np-menu ul li div {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+#np-main #np-sidebar #np-menu ul li a {
+	display: block;
+}
+#np-main #np-sidebar #np-menu ul>li>ul>li {
+	border-bottom: 1px solid #ccc;
+}
+#np-main #np-sidebar #np-menu ul>li>ul a {
+    padding: 10px 15px 10px 40px;
+    font-size: 12px;
+}
+#np-main #np-sidebar #np-menu .panel-group {
+	margin-bottom: 0;
+}
+#np-main #np-sidebar .np-hot-box ul {
+	margin-left: -1px;
+	margin-right: -1px;
+	margin-bottom: -1px;
+	padding: 0;
+}
+#np-main #np-sidebar .np-hot-box li {
+	padding-top: 5px;
+	padding-bottom: 15px;
+	border-right: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
+}
+#np-main #np-sidebar .np-hot-box li:hover {
+	background-color: #fafafa;
+}
+#np-main #np-sidebar .np-hot-box li p {
+	color: #999;
+	height: 55px;
+}
+
+#np-footer {
+	background-color: #35393c;
+	border-top: 10px solid #000;
+	color: #7e8283;
+	padding: 15px 0 10px;
+}
+#np-footer a {
+	color: #7e8283;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+	background-image: none;
+}
+.label {
+	margin-right: 15px;
+}
+
+#np-content {
+	font-size: 15px;
+	line-height: 1.7em;
+}
+#np-content>div>h4 {
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+#np-content-text p {
+	text-indent: 2em;
+}
+#np-content-text p img {
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: -2em;
+}
+#np-content-title {
+	font-size: 12px;
+}
+pre {
+	margin-left: 2em;
+}
+#np-content .np-list li {
+	border-bottom: 1px solid #ccc;
+}
+#np-content .np-list .media-heading a {
+	padding-left: 80px;
+	font-size: 18px;
+}
+#np-content .np-list .media-sub-heading {
+	font-size: 12px;
+}
+#np-content .np-list .tooltip {
+	opacity: 1;
+	margin-top: 3px;
+	/*position: relative;*/
+
+}
+#np-content .np-list .tooltip .tooltip-arrow {
+	border-left-color: #31b0d5;
+}
+#np-content .np-list .tooltip .tooltip-inner {
+	background-color: #31b0d5;
+}
+#np-content .np-list .tooltip .tooltip-inner a {
+	color: #fff;
+	padding-left: 0;
+	font-size: 12px;
+}
+#np-content .np-list p {
+	font-size: 12px;
+	color: #999;
+}
+#np-post-copyright {
+	margin-top: 25px;
+}
+#np-content #np-tags {
+	margin-top: 15px;
+}
+#np-post-copyright.btn-info {
+	font-size: 12px;
+	background-color: #eee;
+	border-color: #eee;
+	color: inherit;
+	padding: 7px 0;
+}
+#np-post-copyright.btn-info a {
+	color: inherit;
+}
+#np-post-copyright.btn-info:hover {
+	color: #fff;
+	background-color: #31b0d5;
+	border-color: #269abc;
+}
+#np-post-copyright.btn-info:hover a {
+	color: #fff;
+}
+#np-main #np-content #np-relates {
+	margin-top: 20px;
+}
+#np-main #np-content #np-relates header {
+	padding: 0;
+}

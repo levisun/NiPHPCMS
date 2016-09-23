@@ -1,0 +1,53 @@
+<include file='Common/header' />
+
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<if condition="$Think.get.pid eq '0'">
+		<li class="form-group">
+			<label for="name" class="col-md-2 control-label">{:L('bannername')}</label>
+			<div class="col-md-6">
+				<input type="text" name="name" id="name" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="width" class="col-md-2 control-label">{:L('width')}</label>
+			<div class="col-md-6">
+				<input type="text" name="width" id="width" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="height" class="col-md-2 control-label">{:L('height')}</label>
+			<div class="col-md-6">
+				<input type="text" name="height" id="height" class="form-control">
+			</div>
+		</li>
+		<else />
+		<li class="form-group">
+			<label for="title" class="col-md-2 control-label">{:L('bannertitle')}</label>
+			<div class="col-md-6">
+				<input type="text" name="title" id="title" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="image" class="col-md-2 control-label">{:L('bannerimage')}</label>
+			<div class="col-md-6">
+				<input type="text" name="image" id="image" class="form-control">
+				<button type="button" class="btn btn-success btn-sm np-upload" data-type="banner" data-id="image" data-model="">{:L('_button_upload')}</button>
+				<img src="" id="img-image" width="100" style="display:none">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="url" class="col-md-2 control-label">{:L('bannerurl')}</label>
+			<div class="col-md-6">
+				<input type="text" name="url" id="url" class="form-control">
+			</div>
+		</li>
+		<input type="hidden" name="pid" value="{$Think.get.pid}">
+		</if>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>
+
+<include file='Common/footer' />

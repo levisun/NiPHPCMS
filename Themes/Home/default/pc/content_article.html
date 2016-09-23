@@ -1,0 +1,61 @@
+<header id="np-content-title">
+	<h3 class="align-c"><a href="{$data.url}">{$data.title}</a></h3>
+	<div class="align-c">
+		<time><i class="icon-time"></i>{$data.updatetime|date='Y-m-d',###}</time>
+		<span>分类:<a href="{$data.cat_url}">{$data.cat_name}</a></span>
+		<span><i class="icon-eye-open"></i>阅读({$data.hits})</span>
+		<span><i class="icon-comments-alt"></i>评论(<a href="{$data.comment_url}">{$data.comment}</a>)</span>
+	</div>
+</header>
+
+<div id="np-content-text">
+	{$data.content}
+</div>
+
+<div id="np-ads">
+	<label:ads id="4">
+	AD：<a href="{$ads.url}">{$ads.name}</a>
+	</label:ads>
+</div>
+
+<div id="np-post-copyright" class="btn btn-info btn-block">
+	转载请注明出处<a href="__DOMAIN__">腐朽的木屋</a> » <a href="{:U('article', array('cid'=>$data['category_id'], 'id'=>$data['id']))}">{$data.title}</a>
+</div>
+
+<notempty name="data.tags">
+<div id="np-tags" class="align-c">
+	标签：
+	<volist name="data.tags" id="vo">
+		<a href="{$vo.url}" class="label label-info">{$vo.name}</a>
+	</volist>
+</div>
+</notempty>
+
+<div id="np-relates">
+	<header>
+		<h4>相关推荐</h4>
+	</header>
+	<ol class="grey">
+		<label:list id="Think.get.cid" num="6" order="a.hits DESC">
+		<li>
+			<a href="{$vo.url}">{$vo.title}</a>
+		</li>
+		</label:list>
+	</ol>
+</div>
+
+<div id="np-comment-form">
+	<header>
+		<h4>评论</h4>
+	</header>
+<form action="__COMMENT_ADDURL__" method="post" class="form-horizontal">
+<div class="">
+	<textarea name="content" id="" class="form-control"></textarea>
+	<input type="text" name="verify" class="form-control long" style="display:inline-block;" placeholder="{:L('verify')}">
+	<img src="{:U('verify')}" data-url="{:U('verify')}" class="np-verify">
+	<input type="hidden" name="category_id" value="{$Think.get.cid}">
+	<input type="hidden" name="content_id" value="{$Think.get.id}">
+	<input type="submit" class="btn btn-primary">
+</div>
+</form>
+</div>

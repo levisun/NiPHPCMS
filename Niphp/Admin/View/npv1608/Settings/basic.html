@@ -1,0 +1,49 @@
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="website_name" class="col-md-2 control-label">{:l('basic_website_name')}</label>
+			<div class="col-md-6">
+				<input type="text" name="website_name" id="website_name" class="form-control" value="{$data.website_name}">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="website_keywords" class="col-md-2 control-label">{:l('basic_website_keywords')}</label>
+			<div class="col-md-6">
+				<input type="text" name="website_keywords" id="website_keywords" class="form-control" value="{$data.website_keywords}">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="website_description" class="col-md-2 control-label">{:l('basic_website_description')}</label>
+			<div class="col-md-6">
+				<textarea name="website_description" id="website_description" class="form-control">{$data.website_description}</textarea>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="bottom_message" class="col-md-2 control-label">{:l('basic_bottom_message')}</label>
+			<div class="col-md-6">
+				<textarea name="bottom_message" id="bottom_message" class="form-control">{$data.bottom_message}</textarea>
+			</div>
+			<div class="col-md-4">
+				<font class="grey align-t">{:l('basic_support_html')}</font>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="copyright" class="col-md-2 control-label">{:l('basic_copyright')}</label>
+			<div class="col-md-6">
+				<textarea name="copyright" id="copyright" class="form-control">{$data.copyright}</textarea>
+			</div>
+			<div class="col-md-4">
+				<font class="grey align-t">{:l('basic_support_html')}</font>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="script" class="col-md-2 control-label">{:l('basic_script')}</label>
+			<div class="col-md-6">
+				<textarea name="script" id="script" class="form-control">{$data.script}</textarea>
+			</div>
+		</li>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>

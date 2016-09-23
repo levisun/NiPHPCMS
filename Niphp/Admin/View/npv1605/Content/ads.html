@@ -1,0 +1,32 @@
+<include file='Common/header' />
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>{:L('id')}</th>
+			<th>{:L('adsname')}</th>
+			<th>{:L('size')}</th>
+			<th>{:L('time')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name='list' id='vo'>
+		<tr>
+			<td>{$vo.id}</td>
+			<td>{$vo.name}</td>
+			<td>{$vo.width}/{$vo.height}</td>
+			<td>{$vo.starttime|date='Y-m-d',###}/{$vo.endtime|date='Y-m-d',###}</td>
+			<td>
+				<a href="{:U('', array('d' => 'editor', 'id' => $vo['id']))}"><i class="icon-edit"></i>{:L('_button_editor')}</a>
+				<a href="{:U('', array('d' => 'remove', 'id' => $vo['id']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+<div class="paging">
+	{$page}
+</div>
+
+<include file='Common/footer' />

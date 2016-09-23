@@ -1,0 +1,84 @@
+<include file='Common/header' />
+
+<div class="row settings-info-boxs">
+	<div class="col-md-4">
+		<div class="card main">
+			<h5>会员</h5>
+			<p>总人数：{$sys_info.member}</p>
+			<p>新注册：{$sys_info.member_reg}</p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card main">
+			<h5>反馈/留言</h5>
+			<p>反馈：{$sys_info.feedback}</p>
+			<p>留言：{$sys_info.message}</p>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card main">
+			<h5>推广</h5>
+			<p>友情链接：{$sys_info.link}</p>
+			<p>广告：{$sys_info.ads}</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-7">
+		<div class="main">
+			<header class="row">
+				<div class="col-md-12">
+					访问统计
+				</div>
+			</header>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<div class="main">
+			<header class="row">
+				<div class="col-md-12">
+					系统信息
+				</div>
+			</header>
+			<table class="table settings-info-boxs">
+				<tbody>
+					<tr>
+						<th>系统名称</th>
+						<td>NIPHPCMS</td>
+					</tr>
+					<tr>
+						<th>系统版本</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>操作系统</th>
+						<td>{$sys_info.os}</td>
+					</tr>
+					<tr>
+						<th>PHP/解译引擎</th>
+						<td>{$sys_info.phpversion} / {$sys_info.env}</td>
+					</tr>
+					<tr>
+						<th>数据库</th>
+						<td>{$sys_info.dbtype} {$sys_info.dbversion}</td>
+					</tr>
+					<tr>
+						<th>版权所有</th>
+						<td>失眠小枕头 [levisun.mail@gmail.com]</td>
+					</tr>
+					<tr>
+						<th>在线升级</th>
+						<td>检测更新</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<include file='Common/footer' />

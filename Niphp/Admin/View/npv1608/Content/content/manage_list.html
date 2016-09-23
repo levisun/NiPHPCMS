@@ -1,0 +1,69 @@
+<form action="" method="post">
+<table class="table">
+	<thead>
+		<tr>
+			<eq name="sort" value="1">
+			<th>{:L('sort')}</th>
+			</eq>
+			<th>{:L('content_title')}</th>
+			<th>{:L('status')}</th>
+			<th>{:L('content_addtime')}</th>
+			<th>{:L('content_updatetime')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name='list' id='vo'>
+		<tr>
+			<eq name="sort" value="1">
+			<td><input type="text" name="sort[{$vo.id}]" class="form-control mini" value="{$vo.sort}"></td>
+			</eq>
+			<td>{$vo.title|msubstr=0,10}</td>
+			<td>
+				<a class="btn btn-danger btn-xs disabled">
+				<if condition='$vo.is_pass eq 1'>
+				{:L('conent_is_pass')}
+				<else />
+				{:L('conent_no_pass')}
+				</if>
+				</a>
+
+				<eq name="vo.is_com" value="1">
+				<a class="btn btn-primary btn-xs disabled">{:L('content_com')}</a>
+				</eq>
+
+				<eq name="vo.is_top" value="1">
+				<a class="btn btn-primary btn-xs disabled">{:L('content_top')}</a>
+				</eq>
+
+				<eq name="vo.is_hot" value="1">
+				<a class="btn btn-primary btn-xs disabled">{:L('content_hot')}</a>
+				</eq>
+			</td>
+			<td>{$vo.addtime|date='Y-m-d H:i:s',###}</td>
+			<td>{$vo.updatetime|date='Y-m-d H:i:s',###}</td>
+			<td>
+				<a href="{:U('', array('d' => 'editor', 'cid' => $_GET['cid'], 'id' => $vo['id']))}"><i class="icon-edit"></i>{:L('_button_editor')}</a>
+				<a href="{:U('', array('d' => 'remove', 'cid' => $_GET['cid'], 'id' => $vo['id']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+		<eq name="sort" value="1">
+		<tr>
+			<td>
+				<input type="hidden" name="cid" value="{$Think.get.cid}">
+				<input type="submit" value="{:L('sort')}" class="btn btn-success">
+			</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</eq>
+	</tbody>
+</table>
+</form>
+<div class="paging">
+	{$page}
+</div>

@@ -1,0 +1,32 @@
+<ul class="np-list">
+<label:list id="3,2">
+	<li class="media">
+		<neq name="vo.image" value="">
+		<div class="media-left media-middle">
+			<a href="{$vo.url}">
+				<img class="media-object" src="{$vo.image}" alt="{$vo.seo_title}">
+			</a>
+		</div>
+		</neq>
+		<div class="media-body">
+			<div class="media-heading">
+				<div class="tooltip left">
+					<div class="tooltip-arrow"></div>
+					<div class="tooltip-inner">
+						<a href="{$vo.cat_url}">{$vo.cat_name}</a>
+					</div>
+				</div>
+				<a href="{$vo.url}">
+					{$vo.title}
+				</a>
+			</div>
+			<div class="media-sub-heading">
+				<span><i class="icon-time"></i>{$vo.updatetime|date='Y-m-d',###}</span>
+				<span><i class="icon-eye-open"></i>阅读({$vo.hits})</span>
+				<span><i class="icon-comments-alt"></i>评论(<a href="{$vo.comment_url}">{$vo.comment}</a>)</span>
+			</div>
+			<p>{$vo.seo_description|msubstr=0,150}</p>
+		</div>
+	</li>
+</label:list>
+</ul>

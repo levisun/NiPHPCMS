@@ -1,0 +1,43 @@
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="title" class="col-md-2 control-label">{:L('title')}</label>
+			<div class="col-md-6">
+				<input type="text" name="title" id="title" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="content" class="col-md-2 control-label">{:L('reply')}</label>
+			<div class="col-md-6">
+				<textarea name="content" id="content" class="form-control"></textarea>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="image" class="col-md-2 control-label">{:L('image')}</label>
+			<div class="col-md-6">
+				<input type="text" name="image" id="image" class="form-control">
+				<button type="button" class="btn btn-success btn-sm" id="upload" data-type="image" data-id="image" data-model="">{:L('_button_upload')}</button>
+				<img src="" id="img-image" width="100" style="display:none">
+			</div>
+			<div class="col-md-4">
+				{:L('img_info')}
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="url" class="col-md-2 control-label">{:L('url')}</label>
+			<div class="col-md-6">
+				<input type="text" name="url" id="url" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="status" class="col-md-2 control-label">{:L('status')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="status" value="1" checked>{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="status" value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>

@@ -1,0 +1,31 @@
+<header id="np-content-title">
+	<h3 class="align-c"><a href="{:U('article', array('cid'=>$data['category_id'], 'id'=>$data['id']))}">{$data.title}</a></h3>
+	<div class="align-c">
+		<time>{$data.updatetime|date='Y-m-d',###}</time>
+		<span>分类:<a href="{:U('entry', array('cid'=>$data['category_id']))}">{$data.cat_name}</a></span>
+		<span>阅读({$data.hits})</span>
+	</div>
+</header>
+
+<div id="np-content-text">
+	{$data.content}
+</div>
+
+<div id="np-ads">
+	<label:ads id="4">
+	AD：<a href="{$ads.url}">{$ads.name}</a>
+	</label:ads>
+</div>
+
+<div id="np-post-copyright" class="btn btn-info btn-block">
+	转载请注明出处<a href="__DOMAIN__">腐朽的木屋</a> » <a href="{:U('article', array('cid'=>$data['category_id'], 'id'=>$data['id']))}">{$data.title}</a>
+</div>
+
+<notempty name="data.tags">
+<div id="np-tags" class="align-c">
+	标签：
+	<volist name="data.tags" id="vo">
+		<a href="{$vo.url}" class="label label-info">{$vo.name}</a>
+	</volist>
+</div>
+</notempty>

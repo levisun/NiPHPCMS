@@ -1,0 +1,79 @@
+<include file="Common/header" />
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>{:L('sort')}</th>
+			<th>{:L('name')}</th>
+			<th>{:L('type')}</th>
+			<th>{:L('model')}</th>
+			<th>{:L('isshow')}</th>
+			<th>{:L('ischannel')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<form action="" method="post">
+		<volist name="list" id="vo">
+		<tr>
+			<td>
+				<input type="text" name="sort[{$vo.id}]" class="form-control mini" value="{$vo.sort}">
+			</td>
+			<td>{$vo.name}</td>
+			<td>
+				<if condition="$vo.type_id eq 1">
+				{:L('_ctype_top')}
+				<elseif condition="$vo.type_id eq 2" />
+				{:L('_ctype_main')}
+				<elseif condition="$vo.type_id eq 3" />
+				{:L('_ctype_foot')}
+				<else />
+				{:L('_ctype_other')}
+				</if>
+			</td>
+			<td>{:L('_model_' . $vo['model_name'])}</td>
+			<td>
+				<if condition="$vo.is_show eq 1">
+				{:L('show')}
+				<else />
+				{:L('hide')}
+				</if>
+			</td>
+			<td>
+				<if condition="$vo.is_channel eq 1">
+				{:L('_button_yes')}
+				<else />
+				{:L('_button_no')}
+				</if>
+			</td>
+			<td>
+				<neq name="parent.id" value="">
+				<a href="{:U('', array('pid' => $parent['pid']))}"><span class="icon-reply"></span>{:L('return')}</a>
+				</neq>
+				<neq name="vo.child" value="">
+				<a href="{:U('', array('pid' => $vo['id']))}"><span class="icon-eye-open"></span>{:L('sohw_child')}</a>
+				</neq>
+
+				<a href="{:U('', array('d' => 'added','pid' => $vo['id']))}"><span class="icon-plus"></span>{:L('add_child')}</a>
+				<a href="{:U('', array('d' => 'editor', 'id' => $vo['id']))}"><i class="icon-edit"></i>{:L('_button_editor')}</a>
+				<a href="{:U('', array('d' => 'remove', 'id' => $vo['id']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+			<td><input type="submit" value="{:L('sort')}" class="btn btn-success"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</form>
+	</tbody>
+</table>
+<div class="paging">
+	{$page}
+</div>
+
+<include file='Common/footer' />

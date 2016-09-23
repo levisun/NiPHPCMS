@@ -1,0 +1,19 @@
+#
+# robots.txt for NiPHPCMS
+#
+User-agent: *
+Disallow: /Niphp/
+Disallow: /Public/
+Disallow: /Runtime/
+Disallow: /Install/
+Disallow: /Static/
+Disallow: /Themes/
+Disallow: /ThinkPHP/
+Disallow: /404.html
+Disallow: /error.html
+Disallow: /index.php?m=Member*
+Disallow: /*?m=Member*
+Disallow: /index.php?m=Comment*
+Disallow: /*?m=Comment*
+Disallow: /index.php?m=Admin*
+Disallow: /*?m=Admin*

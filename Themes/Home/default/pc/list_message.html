@@ -1,0 +1,42 @@
+<a href="{$list_url}">{$list_url}</a> <br>
+<a href="{$mess_url}">{$mess_url}</a>
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="username" class="col-md-2 control-label">姓名</label>
+			<div class="col-md-6">
+				<input type="text" name="username" id="username" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="title" class="col-md-2 control-label">标题</label>
+			<div class="col-md-6">
+				<input type="text" name="title" id="title" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="content" class="col-md-2 control-label">内容</label>
+			<div class="col-md-6">
+				<textarea name="content" id="content" class="form-control"></textarea>
+			</div>
+		</li>
+		<volist name="fields" id="vo">
+		<li class="form-group">
+			<label for="" class="col-md-2 control-label">{$vo.name}</label>
+			<div class="col-md-6">
+			<eq name="vo.field_type" value="text">
+				<textarea name="fields-{$vo.id}" class="form-control"></textarea>
+			</eq>
+			</div>
+
+		</li>
+		</volist>
+		<li class="from-group">
+			<label class="col-md-2 control-label"></label>
+			<div class="col-md-6">
+				<input type="hidden" name="cid" value="{$Think.get.cid}">
+				<input type="submit" value="提交" class="btn btn-success" id="button-basic">
+			</div>
+		</li>
+	</ul>
+</form>

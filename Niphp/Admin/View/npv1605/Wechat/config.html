@@ -1,0 +1,41 @@
+<include file='Common/header' />
+
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="wechat_token" class="col-md-2 control-label">{:l('url_server')}</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" value="{$__DOMAIN__}?m=wechat&c=api">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="wechat_token" class="col-md-2 control-label">{:l('wechat_token')}</label>
+			<div class="col-md-6">
+				<input type="text" name="wechat_token" id="wechat_token" class="form-control" value="{$data.wechat_token}">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="wechat_encodingaeskey" class="col-md-2 control-label">{:l('wechat_encodingaeskey')}</label>
+			<div class="col-md-6">
+				<input type="text" name="wechat_encodingaeskey" id="wechat_encodingaeskey" class="form-control" value="{$data.wechat_encodingaeskey}">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="wechat_appid" class="col-md-2 control-label">{:l('wechat_appid')}</label>
+			<div class="col-md-6">
+				<input type="text" name="wechat_appid" id="wechat_appid" class="form-control" value="{$data.wechat_appid}">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="wechat_appsecret" class="col-md-2 control-label">{:l('wechat_appsecret')}</label>
+			<div class="col-md-6">
+				<input type="text" name="wechat_appsecret" id="wechat_appsecret" class="form-control" value="{$data.wechat_appsecret}">
+			</div>
+		</li>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>
+
+<include file='Common/footer' />

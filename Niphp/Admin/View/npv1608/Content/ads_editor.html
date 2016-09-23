@@ -1,0 +1,52 @@
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="name" class="col-md-2 control-label">{:L('adsname')}</label>
+			<div class="col-md-6">
+				<input type="text" name="name" id="name" class="form-control" value="{$data.name}">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="" class="col-md-2 control-label">{:L('size')}</label>
+			<div class="col-md-6">
+				<input type="text" name="width" id="width" class="form-control mini" value="{$data.width}">
+				<input type="text" name="height" id="height" class="form-control mini" value="{$data.height}">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="" class="col-md-2 control-label">{:L('time')}</label>
+			<div class="col-md-6">
+				<input type="text" name="starttime" id="starttime" class="form-control long" value="{$data.starttime|date='Y-m-d',###}">
+				<input type="text" name="endtime" id="endtime" class="form-control long" value="{$data.endtime|date='Y-m-d',###}">
+				<script type="text/javascript">
+				$(function () {
+					$('#starttime').datetimepicker(
+						{format: 'Y-M-D', viewMode: 'years'}
+						);
+					$('#endtime').datetimepicker(
+						{format: 'Y-M-D', viewMode: 'years'}
+						);
+				});
+				</script>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="image" class="col-md-2 control-label">{:L('adsimage')}</label>
+			<div class="col-md-6">
+				<input type="text" name="image" id="image" class="form-control" value="{$data.image}">
+				<button type="button" class="btn btn-success btn-sm np-upload" data-type="ads" data-id="image" data-model="">{:L('_button_upload')}</button>
+				<img src="{$data.image}" id="img-image" width="100" style="display:none">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="url" class="col-md-2 control-label">{:L('adsurl')}</label>
+			<div class="col-md-6">
+				<input type="text" name="url" id="url" class="form-control" value="{$data.url}">
+			</div>
+		</li>
+	</ul>
+	<input type="hidden" name="id" value="{$data.id}">
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>

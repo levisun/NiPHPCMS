@@ -1,0 +1,52 @@
+<include file='Common/header' />
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>{:L('content_title')}</th>
+			<th>{:L('status')}</th>
+			<th>{:L('content_addtime')}</th>
+			<th>{:L('content_updatetime')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name='list' id='vo'>
+		<tr>
+			<td>{$vo.title|msubstr=0,10}</td>
+			<td>
+				<a class="btn btn-danger btn-xs disabled">
+				<if condition='$vo.is_pass eq 1'>
+				{:L('conent_is_pass')}
+				<else />
+				{:L('conent_no_pass')}
+				</if>
+				</a>
+
+				<eq name="vo.is_com" value="1">
+				<a class="btn btn-primary btn-xs disabled">{:L('content_com')}</a>
+				</eq>
+
+				<eq name="vo.is_top" value="1">
+				<a class="btn btn-primary btn-xs disabled">{:L('content_top')}</a>
+				</eq>
+
+				<eq name="vo.is_hot" value="1">
+				<a class="btn btn-primary btn-xs disabled">{:L('content_hot')}</a>
+				</eq>
+			</td>
+			<td>{$vo.addtime|date='Y-m-d H:i:s',###}</td>
+			<td>{$vo.updatetime|date='Y-m-d H:i:s',###}</td>
+			<td>
+				<a href="{:U('', array('d' => 'view', 'cid' => $_GET['cid'], 'id' => $vo['id']))}"><i class="icon-eye-open"></i>{:L('_button_view')}</a>
+				<a href="{:U('', array('d' => 'remove', 'cid' => $_GET['cid'], 'id' => $vo['id']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+<div class="paging">
+	{$page}
+</div>
+
+<include file='Common/footer' />

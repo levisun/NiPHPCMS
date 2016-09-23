@@ -1,0 +1,82 @@
+<div class="row">
+	<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h5>{:L('info_member')}</h5>
+				<p>{:L('info_member_count')}:{$sys_info.member}</p>
+				<p>{:L('info_member_reg')}:{$sys_info.member_reg}</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h5>{:L('info_feed_or_mess')}</h5>
+				<p>{:L('info_feedback')}:{$sys_info.feedback}</p>
+				<p>{:L('info_message')}:{$sys_info.message}</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h5>{:L('info_tg')}</h5>
+				<p>{:L('info_link')}:{$sys_info.link}</p>
+				<p>{:L('info_ads')}:{$sys_info.ads}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-7">
+		<div class="panel panel-default">
+			<header class="panel-heading">
+				{:L('info_visit_count')}
+			</header>
+			<div class="panel-body">
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-5">
+		<div class="panel panel-default">
+			<header class="panel-heading">
+				{:L('info_sys_info')}
+			</header>
+			<div class="panel-body">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>{:L('info_sys_name')}</th>
+							<td>NIPHPCMS</td>
+						</tr>
+						<tr>
+							<th>{:L('info_sys_version')}</th>
+							<td>{$Think.SYS_VERSION}</td>
+						</tr>
+						<tr>
+							<th>{:L('info_os')}</th>
+							<td>{$sys_info.os}</td>
+						</tr>
+						<tr>
+							<th>{:L('info_php_env')}</th>
+							<td>{$sys_info.phpversion} / {$sys_info.env}</td>
+						</tr>
+						<tr>
+							<th>{:L('info_db')}</th>
+							<td>{$sys_info.dbtype} {$sys_info.dbversion}</td>
+						</tr>
+						<tr>
+							<th>{:L('info_copy')}</th>
+							<td>失眠小枕头 [levisun.mail@gmail.com]</td>
+						</tr>
+						<tr>
+							<th>在线升级</th>
+							<td>检测更新</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+body {
+	font-size: 14px;
+	background-color: #f2f2f2;
+}
+
+#np-header #np-top-member {
+	line-height: 40px;
+	border-bottom: solid 1px #ccc;
+	background-color: #fff;
+}
+#np-header #np-logo-nav {
+	padding-bottom: 15px;
+	background-color: #fff;
+	border-bottom: solid 1px #ccc;
+}
+#np-header #np-logo-nav #np-nav-button {
+	margin-top: 20px;
+    margin-bottom: 10px;
+	font-size: 36px;
+}
+#np-header #np-nav {
+	padding-top: 15px;
+	background-color: #fff;
+	border-bottom: solid 1px #ccc;
+}

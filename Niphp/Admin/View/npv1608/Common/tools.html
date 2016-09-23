@@ -1,0 +1,45 @@
+<header class="panel-heading">
+	<div class="row">
+		<h5 class="col-sm-4">{$__SUB_TITLE__}</h5>
+
+		<eq name="submenu" value="1">
+		<div class="col-md-7 text-right">
+			<form action="" method="get" class="form-inline">
+				<div class="form-group">
+					<input type="hidden" name="m" value="{$Think.const.MODULE_NAME}">
+					<input type="hidden" name="c" value="{$Think.const.CONTROLLER_NAME}">
+					<input type="hidden" name="a" value="{$Think.const.ACTION_NAME}">
+					<if condition="$Think.get.cid neq ''">
+					<!-- 内容 -->
+					<input type="hidden" name="d" value="manage">
+					<input type="hidden" name="cid" value="{$Think.get.cid}">
+					</if>
+					<input type="text" name="key" class="form-control">
+					<button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
+				</div>
+			</form>
+		</div>
+
+		<eq name="submenu_button_added" value="1">
+		<div class="col-md-1 text-right">
+			<!-- 栏目 -->
+			<notempty name="Think.get.pid">
+			<a href="{:U('', array('d' => 'added', 'pid' => $_GET['pid']))}" class="btn btn-default"><span class="icon-plus"></span>{:L('_button_add')}</a>
+			</notempty>
+
+			<!-- 内容 -->
+			<notempty name="Think.get.cid">
+			<a href="{:U('', array('d' => 'added', 'cid' => $_GET['cid']))}" class="btn btn-default"><span class="icon-plus"></span>{:L('_button_add')}</a>
+			</notempty>
+
+			<empty name="Think.get.pid">
+			<empty name="Think.get.cid">
+			<a href="{:U('', array('d' => 'added'))}" class="btn btn-default"><span class="icon-plus"></span>{:L('_button_add')}</a>
+			</empty>
+			</empty>
+		</div>
+		</eq>
+
+		</eq>
+	</div>
+</header>

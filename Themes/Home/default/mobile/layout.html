@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=yes">
+	<meta name="format-detection" content="email=yes">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<title>__TITLE__</title>
+	<meta name="keywords" content="__KEYWORDS__">
+	<meta name="description" content="__DESCRIPTION__">
+	<link href="__STATIC__font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="__STATIC__bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__STATIC__datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="__STATIC__layout/css/layout-3.0.css" rel="stylesheet">
+	<link href="__THEME__css/style.css" rel="stylesheet">
+
+	<!--[if lte IE 9]><script src="__STATIC__layout/js/html5shiv.js"></script><![endif]-->
+	<script src="__STATIC__jquery/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<header id="np-header">
+	<div class="container">
+		<div id="np-top-member" class="row">
+			<div class="col-xs-6">
+				亲，<a href="">请登录</a>
+			</div>
+			<div class="col-xs-6 align-r">
+				<a href="">免费注册</a>
+			</div>
+		</div>
+		<div id="np-logo-nav" class="row">
+			<hgroup id="np-logo" class="col-xs-10">
+				<h1><a href="" title="">腐朽的木屋</a></h1>
+			</hgroup>
+			<div id="np-nav-button" class="col-xs-2">
+				<a class="icon-reorder" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="collapse" id="collapseExample">
+				<nav id="np-nav" class="col-xs-12">
+					<ul class="nav nav-pills nav-stacked">
+						<li role="presentation" class="active"><a href="__DOMAIN__">首页</a></li>
+						<label:nav type="main">
+						<li role="presentation" <notempty name="vo.child">class="dropdown"</notempty>>
+							<notempty name="vo.child">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								{$vo.name} <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<volist name="vo.child" id="cv">
+								<li><a href="{$cv.url}">{$cv.name}</a></li>
+								</volist>
+							</ul>
+							<else />
+							<a href="{$vo.url}">{$vo.name}</a>
+							</notempty>
+						</li>
+						</label:nav>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<footer id="np-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 align-c">
+				<p>__BOTTOM_MESSAGE__</p>
+				<p>__COPYRIGHT__ __SCRIPT__</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="__STATIC__bootstrap/js/bootstrap.min.js"></script>
+<script src="__STATIC__moment/moment.min.js"></script>
+<script src="__STATIC__moment/locale/zh-cn.js"></script>
+<script src="__STATIC__datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="__STATIC__layout/js/layout-3.0.js"></script>
+<script src="__STATIC__layout/js/tools-1.0.js"></script>
+<script src="__THEME__js/main.js"></script>
+<script>
+
+</script>
+</body>
+</html>

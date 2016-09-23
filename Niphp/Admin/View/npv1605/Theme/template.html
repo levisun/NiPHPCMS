@@ -1,0 +1,21 @@
+<include file='Common/header' />
+
+<div class="row">
+	<volist name='list' id='vo'>
+	<div class="col-md-2">
+		<a href="{:U('', array('d' => 'update', 'v' => $vo['name']))}">
+		<div class="thumbnail">
+			<img src="./Themes/{$type}/{$vo.name}/view.jpg" width="100">
+			<div class="caption">
+				<h5>
+					<input type="radio" name="themes" <eq name="config" value="$vo.name">checked</eq>>
+					{$vo.name}
+				</h5>
+			</div>
+		</div>
+		</a>
+	</div>
+	</volist>
+</div>
+
+<include file='Common/footer' />

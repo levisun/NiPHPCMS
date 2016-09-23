@@ -1,0 +1,32 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>{:L('elog_module')}</th>
+			<empty name="Think.get.name">
+			<th>{:L('elog_file_num')}</th>
+			<else/>
+			<th>{:L('elog_file_size')}</th>
+			</empty>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name='list' id='vo'>
+		<tr>
+			<td>{$vo.name}</td>
+			<empty name="Think.get.name">
+			<td>{$vo.count}</td>
+			<else/>
+			<td>{$vo.size}</td>
+			</empty>
+			<td>
+				<empty name="Think.get.name">
+				<a href="{:U('', array('name' => $vo['name']))}"><i class="icon-eye-open"></i>{:L('_button_view')}</a>
+				<else/>
+				<a href="{:U('', array('d' => 'show', 'name' => $_GET['name'], 'id' => $vo['name']))}"><i class="icon-eye-open"></i>{:L('_button_view')}</a>
+				</empty>
+			</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>

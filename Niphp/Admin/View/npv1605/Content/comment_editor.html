@@ -1,0 +1,45 @@
+<include file='Common/header' />
+
+<menu>
+	<a href="{:U('', array('pass' => 'pass'))}" class="btn btn-default"><span class="icon-eye-close"></span>{:L('_button_unexamined')}</a>
+	<a href="{:U('', array('report' => 'report'))}" class="btn btn-default"><span class="icon-warning-sign"></span>{:L('_button_report')}</a>
+	<a href="{:U()}" class="btn btn-default"><span class="icon-eye-open"></span>{:L('_button_all')}</a>
+</menu>
+
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('username')}</label>
+			<div class="col-md-6">
+				<input type="text" class="form-control" value="{$data.username}" disabled>
+			</div>
+		</li>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('content')}</label>
+			<div class="col-md-6">
+				<textarea class="form-control" disabled>{$data.content}</textarea>
+			</div>
+		</li>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('_button_report')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="is_report" value="1" <eq name="data.is_report" value="1">checked</eq> >{:L('_button_yes')}</label>
+				<label class="radio-inline"><input type="radio" name="is_report" value="0" <eq name="data.is_report" value="0">checked</eq> >{:L('_button_no')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('_button_check')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="is_pass" value="1" <eq name="data.is_pass" value="1">checked</eq> >{:L('_button_yes')}</label>
+				<label class="radio-inline"><input type="radio" name="is_pass" value="0" <eq name="data.is_pass" value="0">checked</eq> >{:L('_button_no')}</label>
+			</div>
+		</li>
+	</ul>
+	<input type="hidden" name="id" value="{$data.id}">
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_check')}" class="btn btn-success" id="button-basic">
+	<a href="{:U('', array('d' => 'remove', 'id' => $data['id']))}" class="btn btn-warning" id="button-basic">{:L('_button_delete')}</a>
+	</div>
+</form>
+
+<include file='Common/footer' />

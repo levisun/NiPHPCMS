@@ -1,0 +1,63 @@
+<include file='Common/header' />
+
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<if condition='$data.founder eq 1'>
+		<li class="form-group">
+			<label for="system_portal" class="col-md-2 control-label">{:L('safe_system_portal')}</label>
+			<div class="col-md-6">
+				<input type="text" name="system_portal" id="system_portal" class="form-control" value="{$data.system_portal}">
+				<font class="grey">{:L('safe_system_portal_info')}</font>
+			</div>
+		</li>
+		</if>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('safe_content_check')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="content_check" <if condition='$data.content_check eq 1'>checked</if> value="1">{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="content_check" <if condition='$data.content_check eq 0'>checked</if>value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('safe_member_login_captcha')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="member_login_captcha" <if condition='$data.member_login_captcha eq 1'>checked</if> value="1">{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="member_login_captcha" <if condition='$data.member_login_captcha eq 0'>checked</if>  value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('safe_website_submit_captcha')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="website_submit_captcha"<if condition='$data.website_submit_captcha eq 1'>checked</if>  value="1">{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="website_submit_captcha" <if condition='$data.website_submit_captcha eq 0'>checked</if>  value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label class="col-md-2 control-label">{:L('safe_website_static')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="website_static" <if condition='$data.website_static eq 1'>checked</if>  value="1">{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="website_static" <if condition='$data.website_static eq 0'>checked</if>  value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="upload_file_max" class="col-md-2 control-label">{:L('safe_upload_file_max')}</label>
+			<div class="col-md-6">
+				<input type="text" name="upload_file_max" id="upload_file_max" class="mini form-control" value="{$data.upload_file_max}"> MB
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="upload_file_type" class="col-md-2 control-label">{:L('safe_upload_file_type')}</label>
+			<div class="col-md-6">
+				<textarea name="upload_file_type" id="upload_file_type" class="form-control">{$data.upload_file_type}</textarea>
+			</div>
+			<div class="col-md-2">
+				<font class="grey align-t">{:L('safe_upload_file_type_info')}</font>
+			</div>
+		</li>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-safe">
+	</div>
+</form>
+
+<include file='Common/footer' />

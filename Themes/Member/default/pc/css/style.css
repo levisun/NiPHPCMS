@@ -1,0 +1,38 @@
+body {
+	background-color: #f2f2f2;
+}
+#np-header {
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+}
+#np-header .np-top-nav {
+	margin-bottom: 10px;
+}
+#np-header .np-top-nav .np-top-member {
+	line-height: 38px;
+}
+#np-header .np-header #np-logo h1 {
+	margin: 0;
+}
+#np-header .np-header #np-nav {
+	font-size: 18px;
+}
+
+#np-footer {
+	background-color: #35393c;
+	border-top: 10px solid #000;
+	color: #7e8283;
+	padding: 15px 0 10px;
+}
+#np-footer a {
+	color: #7e8283;
+}
+
+#np-login li {
+	padding: 5px 0;
+}
+#np-login .icon-lock {
+	font-size: 16px;
+}

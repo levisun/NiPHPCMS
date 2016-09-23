@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>__TITLE__</title>
+	<meta name="keywords" content="__KEYWORDS__">
+	<meta name="description" content="__DESCRIPTION__">
+	<link href="__STATIC__font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="__STATIC__bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__STATIC__datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="__STATIC__layout/css/layout-3.0.css" rel="stylesheet">
+	<link href="__CSS__style.css" rel="stylesheet">
+
+	<!--[if lte IE 9]><script src="__STATIC__layout/js/html5shiv.js"></script><![endif]-->
+	<script src="__STATIC__jquery/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<header id="np-header">
+	<div class="container">
+		<div class="row np-top-nav">
+			<div class="col-md-2">
+				<div class="np-top-member">
+					<empty name="__USER__">
+					欢迎回来，<a href="__MEMBER_URL__">请登录</a>!
+					<a href="__MEMBER_REG__">注册</a>
+					<else/>
+					<a href="__MEMBER_LOGOUT__">退出</a>!
+					</empty>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<ul class="nav nav-pills float-r">
+					<label:nav type="top">
+					<li><a href="{$vo.url}">{$vo.name}</a></li>
+					</label:nav>
+				</ul>
+			</div>
+		</div>
+		<div class="row np-header">
+			<hgroup id="np-logo" class="col-md-3">
+				<h1><a href="__DOMAIN__" title="">腐朽的木屋</a></h1>
+			</hgroup>
+			<nav id="np-nav" class="col-md-9">
+				<ul class="nav nav-pills float-r">
+					<li role="presentation"><a href="__DOMAIN__">首页</a></li>
+
+					<label:nav type="main">
+					<li role="presentation" <notempty name="vo.child">class="dropdown"</notempty>>
+						<notempty name="vo.child">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							{$vo.name} <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<volist name="vo.child" id="cv">
+							<li><a href="{$cv.url}">{$cv.name}</a></li>
+							</volist>
+						</ul>
+						<else />
+						<a href="{$vo.url}">{$vo.name}</a>
+						</notempty>
+					</li>
+					</label:nav>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+<div id="np-main" class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<empty name="Think.get.cid">
+			<div id="np-banner" class="row">
+				<div id="carousel-example-generic" class="carousel slide col-md-12" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<label:banner id="1">
+							<li data-target="#carousel-example-generic" data-slide-to="{$key}" <eq name="key" value="0">class="active"</eq>></li>
+						</label:banner>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<label:banner id="1">
+						<a href="{$vo.url}">
+						<div class="item active">
+							<img src="{$vo.image}" alt="...">
+							<div class="carousel-caption">
+							</div>
+						</div>
+						</a>
+						</label:banner>
+					</div>
+
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			</empty>
+
+
+			<notempty name="Think.get.cid">
+			<div id="np-breadcrumb" class="row">
+				<div class="col-md-12">
+					<ol class="breadcrumb">
+						<li><a href="__DOMAIN__">首页</a></li>
+						<label:breadcrumb id="Think.get.cid">
+						<li><a href="{$vo.url}">{$vo.name}</a></li>
+						</label:breadcrumb>
+					</ol>
+				</div>
+			</div>
+			</notempty>
+
+
+			<div id="np-content" class="row">
+				<div class="col-md-12">
+					<notempty name="Think.get.cid">
+					<empty name="Think.get.id">
+					<label:sidebar id="Think.get.cid">
+					</label:sidebar>
+					<h4>{$label_sidebar_name}</h4>
+					</empty>
+					</notempty>
+
+					<div class="panel panel-default">
+						<div class="panel-body">
+							{__CONTENT__}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<aside id="np-sidebar" class="col-md-4">
+			<notempty name="Think.get.cid">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="np-menu" class="panel panel-default">
+						<div class="panel-heading">
+							<label:sidebar id="Think.get.cid">
+							</label:sidebar>
+							<h5 class="panel-title">{$label_sidebar_name}</h5>
+						</div>
+						<div class="panel-body">
+							<ul class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<label:sidebar id="Think.get.cid">
+								<notempty name="vo.child">
+								<volist name="vo.child" id="cv">
+								<li >
+									<notempty name="cv.child">
+									<div class="panel-heading" role="tab" id="heading-menu-{$key}">
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#menu-{$key}" aria-expanded="false" aria-controls="menu-{$key}">
+										{$cv.name}
+									</a>
+									</div>
+									<ul id="menu-{$key}" class="panel-collapse collapse" role="tabpanel" aria-expanded="false" aria-labelledby="heading-menu-{$key}">
+										<volist name="cv.child" id="cc">
+										<li><a href="{$cc.url}">{$cc.name}</a></li>
+										</volist>
+									</ul>
+									<else />
+									<div class="panel-heading" role="tab" id="heading-menu-{$key}">
+									<a href="{$cv.url}">{$cv.name}</a>
+									</div>
+									</notempty>
+								</li>
+								</volist>
+								</notempty>
+
+								</label:sidebar>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			</notempty>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default np-hot-box">
+						<div class="panel-heading">
+							<h5 class="panel-title">程序开发</h5>
+						</div>
+						<ul class="panel-body row">
+							<label:list id="3" num="4">
+							<li class="col-md-6 align-c">
+								<h5><a href="{$vo.url}">{$vo.title|msubstr=0,7}</a></h5>
+								<p>{$vo.seo_description|msubstr=0,30}</p>
+								<a href="{$vo.url}" class="btn btn-info">点击查看</a>
+							</li>
+							</label:list>
+						</ul>
+					</div>
+
+					<div class="panel panel-default np-hot-box">
+						<div class="panel-heading">
+							<h5 class="panel-title">前端开发</h5>
+						</div>
+						<ul class="panel-body row">
+							<label:list id="2" num="4">
+							<li class="col-md-6 align-c">
+								<h5><a href="{$vo.url}">{$vo.title|msubstr=0,7}</a></h5>
+								<p>{$vo.seo_description|msubstr=0,30}</p>
+								<a href="{$vo.url}" class="btn btn-info">点击查看</a>
+							</li>
+							</label:list>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</div>
+</div>
+
+<footer id="np-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 align-c">
+				<p>__BOTTOM_MESSAGE__</p>
+				<p>__COPYRIGHT__ __SCRIPT__</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<script src="__STATIC__bootstrap/js/bootstrap.min.js"></script>
+<script src="__STATIC__moment/moment.min.js"></script>
+<script src="__STATIC__moment/locale/zh-cn.js"></script>
+<script src="__STATIC__datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="__STATIC__layout/js/layout-3.0.js"></script>
+<script src="__STATIC__layout/js/tools-1.0.js"></script>
+<script src="__THEME__js/main.js"></script>
+<script>
+
+</script>
+</body>
+</html>

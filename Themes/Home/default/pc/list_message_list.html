@@ -1,0 +1,22 @@
+<ul>
+	<volist name="list" id="vo">
+	<li class="media">
+		<neq name="vo.image" value="">
+		<div class="media-left media-middle">
+			<a href="{$vo.url}">
+				<img class="media-object" src="{$vo.image}" alt="{$vo.seo_title}">
+			</a>
+		</div>
+		</neq>
+		<div class="media-body">
+			<a href="{$vo.url}">
+				<h5 class="media-heading">{$vo.title}</h5>
+			</a>
+			<time>{$vo.addtime|date='Y-m-d',###}</time>
+		</div>
+	</li>
+	</volist>
+</ul>
+<div class="paging">
+	{$page}
+</div>

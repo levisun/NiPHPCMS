@@ -1,0 +1,50 @@
+<style>
+h1 {
+	margin: 0;
+	color: red;
+}
+</style>
+<eq name="Think.const.controller_name" value="Account">
+<div class="panel panel-default">
+	<div class="panel-body">
+</eq>
+		<div class="row">
+			<div class="col-sm-2 text-right">
+				<h1>
+				<?php if(isset($message)) {?>
+				<span class="icon-ok-sign"></span>
+				<?php }else{?>
+				<span class="icon-warning-sign"></span>
+				<?php }?>
+				</h1>
+			</div>
+			<div class="col-sm-9">
+				<p>
+				<?php if(isset($message)) {?>
+				<?php echo($message); ?>
+				<?php }else{?>
+				<?php echo($error); ?>
+				<?php }?>
+				</p>
+				<p class="detail"></p>
+				<p class="jump">
+				页面自动 <a id="href" href="<?php echo($jumpUrl); ?>">跳转</a> 等待时间： <b id="wait"><?php echo($waitSecond); ?></b>
+				</p>
+			</div>
+		</div>
+<eq name="Think.const.controller_name" value="Account">
+	</div>
+</div>
+</eq>
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+	var time = --wait.innerHTML;
+	if(time <= 0) {
+		location.href = href;
+		clearInterval(interval);
+	};
+}, 1000);
+})();
+</script>

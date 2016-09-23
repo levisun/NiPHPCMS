@@ -1,0 +1,109 @@
+<include file='Common/head' />
+
+<header id="header" class="container-fluid">
+	<div class="row">
+		<hgroup id="logo" class="col-md-2">
+			<a href="">
+				<font style="color:yellow">Ni</font><font style="color:orange">PHP</font>
+			</a>
+		</hgroup>
+		<div class="col-md-6">
+			<ol class="breadcrumb">
+				{$__BREADCRUMB__}
+			</ol>
+		</div>
+		<menu id="menu" class="col-md-4">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="icon-globe"></span>
+						{:L('language')}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="title"><a>{:L('language_select')}</a></li>
+						<li><a href="">简体中文</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<span class="icon-user"></span>
+						{$__USER__.username}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="{:U('user/user', array('d' => 'editor', 'id' => $__USER__['id']))}">{:L('update_admin')}</a></li>
+						<li><a href="{:U('account/logout')}">{:L('logout')}</a></li>
+					</ul>
+				</li>
+			</ul>
+		</menu>
+	</div>
+</header>
+
+<section id="main" class="container-fluid">
+	<div class="row">
+		<aside id="sidebar" class="col-md-2">
+			<div class="web-url">
+				<a href="__DOMAIN__" target="_blank">
+					<span class="icon-home"></span>
+					{:L('web_home')}
+				</a>
+			</div>
+			<ul class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<volist name='__MENU__' id='vo'>
+				<li class="panel panel-default">
+					<div class="panel-heading" role="tab" id="heading-nav-{$key}">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#nav-{$key}" aria-expanded="<if condition='$Think.const.CONTROLLER_NAME eq ucfirst($key)'>true<else />false</if>" aria-controls="nav-{$key}" class="<if condition='$Think.const.CONTROLLER_NAME eq ucfirst($key)'>active</if>">
+							<span class="{:C($key)}"></span> {$vo.name}
+						</a>
+					</div>
+					<ul id="nav-{$key}" class="panel-collapse collapse <if condition='$Think.const.CONTROLLER_NAME eq ucfirst($key)'>in</if>" role="tabpanel" aria-expanded="<if condition='$Think.const.CONTROLLER_NAME eq ucfirst($key)'>true<else />false</if>" aria-labelledby="heading-nav-{$key}">
+						<volist name='vo.menu' id='v'>
+						<li><a class="<eq name="Think.const.ACTION_NAME" value="$v.action">active</eq>" href="{$v.url}">{$v.lang}</a></li>
+						</volist>
+					</ul>
+				</li>
+				</volist>
+			</ul>
+		</aside>
+
+		<section id="content" class="col-md-10 col-md-offset-2">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main">
+						<header class="row">
+							<div class="col-md-4">{$__SUB_TITLE__}</div>
+
+							<eq name="submenu" value="1">
+								<div class="col-md-7 text-right">
+									<form action="" method="get" class="form-inline">
+										<div class="form-group">
+											<input type="hidden" name="m" value="{$Think.const.BIND_MODULE}">
+											<input type="hidden" name="c" value="{$Think.const.CONTROLLER_NAME}">
+											<input type="hidden" name="a" value="{$Think.const.ACTION_NAME}">
+											<if condition="$Think.get.cid neq ''">
+											<!-- 内容 -->
+											<input type="hidden" name="d" value="manage">
+											<input type="hidden" name="cid" value="{$Think.get.cid}">
+											</if>
+											<input type="text" name="key" class="form-control">
+											<button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
+										</div>
+									</form>
+								</div>
+								<eq name="submenu_button_added" value="1">
+								<div class="col-md-1 text-right">
+									<if condition="$Think.get.pid neq ''">
+									<!-- 栏目 -->
+									<a href="{:U('', array('d' => 'added', 'pid' => $_GET['pid']))}" class="btn btn-default"><span class="icon-plus"></span>{:L('_button_add')}</a>
+									<elseif condition="$Think.get.cid neq ''"/>
+									<!-- 内容 -->
+									<a href="{:U('', array('d' => 'added', 'cid' => $_GET['cid']))}" class="btn btn-default"><span class="icon-plus"></span>{:L('_button_add')}</a>
+									<else />
+									<a href="{:U('', array('d' => 'added'))}" class="btn btn-default"><span class="icon-plus"></span>{:L('_button_add')}</a>
+									</if>
+								</div>
+								</eq>
+							</eq>
+						</header>

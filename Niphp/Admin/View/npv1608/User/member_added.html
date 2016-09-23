@@ -1,0 +1,122 @@
+<form action="" method="post" class="form-horizontal">
+	<ul>
+		<li class="form-group">
+			<label for="username" class="col-md-2 control-label">{:L('membername')}</label>
+			<div class="col-md-6">
+				<input type="text" name="username" id="username" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="password" class="col-md-2 control-label">{:L('password')}</label>
+			<div class="col-md-6">
+				<input type="password" name="password" id="password" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="not_password" class="col-md-2 control-label">{:L('not_password')}</label>
+			<div class="col-md-6">
+				<input type="password" name="not_password" id="not_password" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="email" class="col-md-2 control-label">{:L('email')}</label>
+			<div class="col-md-6">
+				<input type="text" name="email" id="email" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="realname" class="col-md-2 control-label">{:L('realname')}</label>
+			<div class="col-md-6">
+				<input type="text" name="realname" id="realname" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="nickname" class="col-md-2 control-label">{:L('nickname')}</label>
+			<div class="col-md-6">
+				<input type="text" name="nickname" id="nickname" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="portrait" class="col-md-2 control-label">{:L('portrait')}</label>
+			<div class="col-md-6">
+				<input type="text" name="portrait" id="portrait" class="form-control">
+				<button type="button" class="btn btn-success btn-sm" id="upload" data-type="portrait" data-id="portrait" data-model="">{:L('_button_upload')}</button>
+				<img src="" id="img-portrait" width="100" style="display:none">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="gender" class="col-md-2 control-label">{:L('gender')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="gender" value="1" checked>{:L('_sex_man')}</label>
+				<label class="radio-inline"><input type="radio" name="gender" value="2">{:L('_sex_woman')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="birthday" class="col-md-2 control-label">{:L('birthday')}</label>
+			<div class="col-md-6">
+				<input type="text" name="birthday" id="birthday" class="form-control">
+				<script type="text/javascript">
+				$(function () {
+					$('#birthday').datetimepicker(
+						{format: 'Y-M-D', viewMode: 'years'}
+						);
+				});
+				</script>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="province" class="col-md-2 control-label">{:L('province')}</label>
+			<div class="col-md-2">
+				<select name="province" id="province" class="form-control region" data-type="city">
+					<option value="">{:L('select_province')}</option>
+					<volist name='province' id='vo'>
+					<option value="{$vo.id}">{$vo.name}</option>
+					</volist>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<select name="city" id="city" class="form-control region" data-type="area">
+					<option value="">{:L('select_city')}</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<select name="area" id="area" class="form-control">
+					<option value="">{:L('select_area')}</option>
+				</select>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="address" class="col-md-2 control-label">{:L('address')}</label>
+			<div class="col-md-6">
+				<input type="text" name="address" id="address" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="phone" class="col-md-2 control-label">{:L('phone')}</label>
+			<div class="col-md-6">
+				<input type="text" name="phone" id="phone" class="form-control">
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="status" class="col-md-2 control-label">{:L('status')}</label>
+			<div class="col-md-6">
+				<label class="radio-inline"><input type="radio" name="status" value="1" checked>{:L('_button_open')}</label>
+				<label class="radio-inline"><input type="radio" name="status" value="0">{:L('_button_close')}</label>
+			</div>
+		</li>
+		<li class="form-group">
+			<label for="" class="col-md-2 control-label">{:L('memberlevel')}</label>
+			<div class="col-md-6">
+				<select name="level" class="form-control">
+					<option value="">{:L('memberlevel_select')}</option>
+					<volist name='level' id='vo'>
+					<option value="{$vo.id}">{$vo.name}</option>
+					</volist>
+				</select>
+			</div>
+		</li>
+	</ul>
+	<div class="form-button col-md-10 col-md-offset-2">
+	<input type="submit" value="{:L('_button_save')}" class="btn btn-success" id="button-basic">
+	</div>
+</form>

@@ -1,0 +1,76 @@
+<header id="np-content-title">
+	<h3 class="align-c"><a href="{$data.url}">{$data.title}</a></h3>
+	<div class="align-c">
+		<time><i class="icon-time"></i>{$data.updatetime|date='Y-m-d',###}</time>
+		<span>分类:<a href="{$data.cat_url}">{$data.cat_name}</a></span>
+		<span><i class="icon-eye-open"></i>阅读({$data.hits})</span>
+		<span><i class="icon-comments-alt"></i>评论(<a href="{$data.comment_url}">{$data.comment}</a>)</span>
+	</div>
+</header>
+
+<div id="np-content-text">
+	{$data.content}
+
+	<empty name="$data.album">
+	<div>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<volist name="data.album" id="vo">
+				<li data-target="#carousel-example-generic" data-slide-to="{$key}" <eq name="key" value="0">class="active"</eq>></li>
+				</volist>
+			</ol>
+
+			<div class="carousel-inner" role="listbox">
+				<volist name="data.album" id="vo">
+				<div class="item <eq name="key" value="0">active</eq>">
+					<img src="{$vo.image}" width="100%">
+					<div class="carousel-caption">
+					</div>
+				</div>
+				</volist>
+			</div>
+
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	</empty>
+</div>
+
+<div id="np-ads">
+	<label:ads id="4">
+	AD：<a href="{$ads.url}">{$ads.name}</a>
+	</label:ads>
+</div>
+
+<div id="np-post-copyright" class="btn btn-info btn-block">
+	转载请注明出处<a href="__DOMAIN__">腐朽的木屋</a> » <a href="{:U('article', array('cid'=>$data['category_id'], 'id'=>$data['id']))}">{$data.title}</a>
+</div>
+
+<notempty name="data.tags">
+<div id="np-tags" class="align-c">
+	标签：
+	<volist name="data.tags" id="vo">
+		<a href="{$vo.url}" class="label label-info">{$vo.name}</a>
+	</volist>
+</div>
+</notempty>
+
+<div id="np-relates">
+	<header>
+		<h4>相关推荐</h4>
+	</header>
+	<ol class="grey">
+		<label:list id="Think.get.cid" num="6" order="a.hits DESC">
+		<li>
+			<a href="{$vo.url}">{$vo.title}</a>
+		</li>
+		</label:list>
+	</ol>
+</div>

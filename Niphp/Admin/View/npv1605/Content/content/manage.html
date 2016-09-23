@@ -1,0 +1,31 @@
+<include file='Common/header' />
+
+<div class="row">
+	<volist name='list' id='vo'>
+	<div class="col-md-3">
+		<div class="thumbnail">
+			<img src="__STATIC____THEME__/images/{$vo.model_name}.png" alt="">
+			<div class="caption">
+				<h5>{$vo.name}</h5>
+				<eq name="vo.model_name" value="page">
+				<a href="{:U('', array('d' => 'page', 'cid' => $vo['id']))}">
+					{:L('content_button_editor')}
+				</a>
+				<else />
+				<a href="{:U('', array('d' => 'manage', 'cid' => $vo['id']))}">
+					{:L('content_button_list')}
+				</a>
+				</eq>
+				<neq name="vo.child" value="">
+					-
+					<a href="{:U('', array('pid' => $vo['id']))}">
+						{:L('content_button_child')}
+					</a>
+				</neq>
+			</div>
+		</div>
+	</div>
+	</volist>
+</div>
+
+<include file='Common/footer' />

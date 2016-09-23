@@ -1,0 +1,81 @@
+<table class="table">
+	<if condition="$Think.get.pid eq ''">
+	<thead>
+		<tr>
+			<th>{:L('sort')}</th>
+			<th>{:L('id')}</th>
+			<th>{:L('bannername')}</th>
+			<th>{:L('width')}</th>
+			<th>{:L('height')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<form action="" method="post">
+		<volist name='list' id='vo'>
+		<tr>
+			<td>
+				<input type="text" name="sort[{$vo.id}]" class="form-control mini" value="{$vo.sort}">
+			</td>
+			<td>{$vo.id}</td>
+			<td>{$vo.name}</td>
+			<td>{$vo.width}</td>
+			<td>{$vo.height}</td>
+			<td>
+				<a href="{:U('', array('pid' => $vo['id']))}"><span class="icon-eye-open"></span>{:L('manage_image')}</a>
+				<a href="{:U('', array('d' => 'editor', 'id' => $vo['id']))}"><i class="icon-edit"></i>{:L('_button_editor')}</a>
+				<a href="{:U('', array('d' => 'remove', 'id' => $vo['id']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+			<td><input type="submit" value="{:L('sort')}" class="btn btn-success"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</form>
+	</tbody>
+	<else />
+	<thead>
+		<tr>
+			<th>{:L('sort')}</th>
+			<th>{:L('bannertitle')}</th>
+			<th>{:L('bannerurl')}</th>
+			<th>{:L('bannerimage')}</th>
+			<th>{:L('operation')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<form action="" method="post">
+		<volist name='list' id='vo'>
+		<tr>
+			<td>
+				<input type="text" name="sort[{$vo.id}]" class="form-control mini" value="{$vo.sort}">
+			</td>
+			<td>{$vo.title}</td>
+			<td>{$vo.url}</td>
+			<td>{$vo.image}</td>
+			<td>
+				<a href="{:U('')}"><span class="icon-reply"></span>{:L('return')}</a>
+				<a href="{:U('', array('d' => 'editor', 'pid' => $vo['pid'], 'id' => $vo['id']))}"><i class="icon-edit"></i>{:L('_button_editor')}</a>
+				<a href="{:U('', array('d' => 'remove', 'pid' => $vo['pid'], 'id' => $vo['id']))}"><i class="icon-remove"></i>{:L('_button_delete')}</a>
+			</td>
+		</tr>
+		</volist>
+		<tr>
+			<td><input type="submit" value="{:L('sort')}" class="btn btn-success"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</form>
+	</tbody>
+	</if>
+</table>
+<div class="paging">
+	{$page}
+</div>
